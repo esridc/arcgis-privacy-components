@@ -64,8 +64,8 @@ declare namespace LocalJSX {
     interface ArcgisTrackingOption {
     }
     interface ArcgisTrackingPopup {
-        "onOpenTelementrySettings"?: (event: ArcgisTrackingPopupCustomEvent<any>) => void;
-        "onSetTelemetryConfig"?: (event: ArcgisTrackingPopupCustomEvent<CookieConfig>) => void;
+        "onOpenCookieDetails"?: (event: ArcgisTrackingPopupCustomEvent<any>) => void;
+        "onSetCookieConfig"?: (event: ArcgisTrackingPopupCustomEvent<CookieConfig>) => void;
     }
     interface ArcgisTrackingSidebar {
         "cookieConfig"?: CookieConfig;

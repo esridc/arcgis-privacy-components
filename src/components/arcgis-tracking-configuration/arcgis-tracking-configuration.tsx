@@ -33,13 +33,13 @@ export class ArcgisTrackingConfiguration {
     );
   }
 
-  @Listen('openTelementryDetails')
-  openTelementryDetails() {
+  @Listen('openCookieDetails')
+  openCookieDetails() {
     this.trackingSidebarEl.open = true;    
   }
 
-  @Listen('setTelemetryConfig')
-  setTelemetryConfig(evt) {
+  @Listen('setCookieConfig')
+  setCookieConfig(evt) {
     storeCookieConfig( evt.detail );
 
     this.trackingSidebarEl.open = false;
