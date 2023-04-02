@@ -76,13 +76,13 @@ export class ArcgisTrackingSidebar {
   public closeSidebar() {
     this.open = false;
     this.getSettings();
-    this.setTelemetryConfig.emit(this.cookieConfig);
+    this.setTsetCookieConfigelemetryConfig.emit(this.cookieConfig);
   }
 
-  @Event() setTelemetryConfig: EventEmitter<CookieConfig>;
+  @Event() setCookieConfig: EventEmitter<CookieConfig>;
   confirmChoices() {
     this.cookieConfig = this.getSettings();
-    this.setTelemetryConfig.emit(this.cookieConfig);
+    this.setCookieConfig.emit(this.cookieConfig);
 
     // Should a component close itself? - seems better to leave to orchestrator
     // this.open = false;
