@@ -11,7 +11,7 @@ export class ArcgisTrackingConfiguration {
   private trackingPopupEl;
   private trackingSidebarEl;
 
-  @State() cookieConfig: CookieConfig = null;
+  @State() cookieConfig: CookieConfig = {};
   
   componentWillLoad() {
     this.cookieConfig = getCookieConfig();

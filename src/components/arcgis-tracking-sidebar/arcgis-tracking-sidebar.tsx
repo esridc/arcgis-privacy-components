@@ -44,7 +44,8 @@ export class ArcgisTrackingSidebar {
   }
 
   private renderAccordionItem(title: string, config: CookieOptions, content: string) {
-    const checkedValue = this.cookieConfig[CookieOptions[config]];
+    // Default tracking to true if not set
+    const checkedValue = this.cookieConfig[CookieOptions[config]] || true;
 
     return (
       <calcite-accordion-item heading={title}>
@@ -76,7 +77,7 @@ export class ArcgisTrackingSidebar {
   public closeSidebar() {
     this.open = false;
     this.getSettings();
-    this.setTsetCookieConfigelemetryConfig.emit(this.cookieConfig);
+    this.setCookieConfig.emit(this.cookieConfig);
   }
 
   @Event() setCookieConfig: EventEmitter<CookieConfig>;

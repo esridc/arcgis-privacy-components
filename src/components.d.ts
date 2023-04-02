@@ -69,7 +69,7 @@ declare namespace LocalJSX {
     }
     interface ArcgisTrackingSidebar {
         "cookieConfig"?: CookieConfig;
-        "onSetTelemetryConfig"?: (event: ArcgisTrackingSidebarCustomEvent<CookieConfig>) => void;
+        "onSetCookieConfig"?: (event: ArcgisTrackingSidebarCustomEvent<CookieConfig>) => void;
         "open"?: boolean;
     }
     interface IntrinsicElements {

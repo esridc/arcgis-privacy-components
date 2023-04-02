@@ -7,7 +7,7 @@ export enum CookieOptions {
     functional  = 'functional',
 }
 export type CookieConfig = {
-    [key in CookieOptions]: boolean;
+    [key in CookieOptions]?: boolean;
 };
 
 const defaultCookies: CookieConfig = {
