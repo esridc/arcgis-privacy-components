@@ -1,10 +1,10 @@
-<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>arcgis-tracking-configuration</title> <script type="module" src="./build/arcgis-tracking-configuration.esm.js"></script> <script nomodule="" src="./build/arcgis-tracking-configuration.js"></script> </head> <body> <!-- Delayed render so we can get the API key from URL parameters --> <div id="placeholder"></div> <style>body {
+<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>arcgis-tracking-configuration</title> <script type="module" src="./build/arcgis-tracking-configuration.esm.js"></script> <script nomodule="" src="./build/arcgis-tracking-configuration.js"></script> <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/1.0.7/calcite.css"> <script type="module" src="https://esri.github.io/hub-components/harnesses/build/hub-components.esm.js"></script> </head> <body> <!-- Delayed render so we can get the API key from URL parameters --> <div id="placeholder"></div> <style>body {
       font-family: sans-serif;
       margin: 0;
       padding: 0;
     }</style> <script>
     // Dynamically add the component so we can set URL or object properties
-    const componentName = "";
+    const componentName = "arcgis-tracking-configuration";
 
     const placeholderEl = document.getElementById("placeholder");
     const componentEl = document.createElement( componentName );
@@ -12,6 +12,7 @@
     const urlParams = new URL(window.location).searchParams;
     // Change for specific component properties
     componentEl.query = urlParams.get('query');
+    componentEl.innerHTML = "By accepting all cookies or browsing this site, you agree to the storing of cookies on your device to assist Esri in analyzing visitor behavior, improving your experience, and delivering tailored advertising on and off our sites. Manage cookies here or at the bottom of any page."
     
     placeholderEl.appendChild(componentEl);
   </script> </body></html>

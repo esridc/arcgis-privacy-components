@@ -1,0 +1,2 @@
+const t="cookieSettings";var e;(function(t){t["necessary"]="necessary";t["targeting"]="targeting";t["performance"]="performance";t["functional"]="functional"})(e||(e={}));const n={[e.necessary]:true,[e.targeting]:true,[e.performance]:true,[e.functional]:true};function r(){return n}function o(e){localStorage.setItem(t,JSON.stringify(Object.assign({},e)))}function a(){const e=localStorage.getItem(t);if(!!e){return JSON.parse(e)}else{return r()}}export{e as C,r as a,a as g,o as s};
+//# sourceMappingURL=p-5c1362fc.js.map
