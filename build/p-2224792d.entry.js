@@ -1,0 +1,2 @@
+import{r as s,h as o,H as r}from"./p-768fa76f.js";const t=":host{display:block}";const a=class{constructor(o){s(this,o)}render(){return o(r,null,o("slot",null))}};a.style=t;export{a as arcgis_privacy_option};
+//# sourceMappingURL=p-2224792d.entry.js.map
