@@ -7,86 +7,106 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { CookieConfig } from "./utils/telemetry-config";
 export namespace Components {
-    interface ArcgisTrackingConfiguration {
+    interface ArcgisPrivacyNotice {
     }
-    interface ArcgisTrackingOption {
+    interface ArcgisPrivacyOption {
     }
-    interface ArcgisTrackingPopup {
+    interface ArcgisPrivacyPopup {
+        /**
+          * Visible state if open, or just showing cookie icon.
+         */
+        "open": boolean;
     }
-    interface ArcgisTrackingSidebar {
+    interface ArcgisPrivacySettings {
+        /**
+          * Existing preference settings
+         */
         "cookieConfig": CookieConfig;
+        /**
+          * Whether the Settings modal is open or closed
+         */
         "open": boolean;
     }
 }
-export interface ArcgisTrackingPopupCustomEvent<T> extends CustomEvent<T> {
+export interface ArcgisPrivacyPopupCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLArcgisTrackingPopupElement;
+    target: HTMLArcgisPrivacyPopupElement;
 }
-export interface ArcgisTrackingSidebarCustomEvent<T> extends CustomEvent<T> {
+export interface ArcgisPrivacySettingsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLArcgisTrackingSidebarElement;
+    target: HTMLArcgisPrivacySettingsElement;
 }
 declare global {
-    interface HTMLArcgisTrackingConfigurationElement extends Components.ArcgisTrackingConfiguration, HTMLStencilElement {
+    interface HTMLArcgisPrivacyNoticeElement extends Components.ArcgisPrivacyNotice, HTMLStencilElement {
     }
-    var HTMLArcgisTrackingConfigurationElement: {
-        prototype: HTMLArcgisTrackingConfigurationElement;
-        new (): HTMLArcgisTrackingConfigurationElement;
+    var HTMLArcgisPrivacyNoticeElement: {
+        prototype: HTMLArcgisPrivacyNoticeElement;
+        new (): HTMLArcgisPrivacyNoticeElement;
     };
-    interface HTMLArcgisTrackingOptionElement extends Components.ArcgisTrackingOption, HTMLStencilElement {
+    interface HTMLArcgisPrivacyOptionElement extends Components.ArcgisPrivacyOption, HTMLStencilElement {
     }
-    var HTMLArcgisTrackingOptionElement: {
-        prototype: HTMLArcgisTrackingOptionElement;
-        new (): HTMLArcgisTrackingOptionElement;
+    var HTMLArcgisPrivacyOptionElement: {
+        prototype: HTMLArcgisPrivacyOptionElement;
+        new (): HTMLArcgisPrivacyOptionElement;
     };
-    interface HTMLArcgisTrackingPopupElement extends Components.ArcgisTrackingPopup, HTMLStencilElement {
+    interface HTMLArcgisPrivacyPopupElement extends Components.ArcgisPrivacyPopup, HTMLStencilElement {
     }
-    var HTMLArcgisTrackingPopupElement: {
-        prototype: HTMLArcgisTrackingPopupElement;
-        new (): HTMLArcgisTrackingPopupElement;
+    var HTMLArcgisPrivacyPopupElement: {
+        prototype: HTMLArcgisPrivacyPopupElement;
+        new (): HTMLArcgisPrivacyPopupElement;
     };
-    interface HTMLArcgisTrackingSidebarElement extends Components.ArcgisTrackingSidebar, HTMLStencilElement {
+    interface HTMLArcgisPrivacySettingsElement extends Components.ArcgisPrivacySettings, HTMLStencilElement {
     }
-    var HTMLArcgisTrackingSidebarElement: {
-        prototype: HTMLArcgisTrackingSidebarElement;
-        new (): HTMLArcgisTrackingSidebarElement;
+    var HTMLArcgisPrivacySettingsElement: {
+        prototype: HTMLArcgisPrivacySettingsElement;
+        new (): HTMLArcgisPrivacySettingsElement;
     };
     interface HTMLElementTagNameMap {
-        "arcgis-tracking-configuration": HTMLArcgisTrackingConfigurationElement;
-        "arcgis-tracking-option": HTMLArcgisTrackingOptionElement;
-        "arcgis-tracking-popup": HTMLArcgisTrackingPopupElement;
-        "arcgis-tracking-sidebar": HTMLArcgisTrackingSidebarElement;
+        "arcgis-privacy-notice": HTMLArcgisPrivacyNoticeElement;
+        "arcgis-privacy-option": HTMLArcgisPrivacyOptionElement;
+        "arcgis-privacy-popup": HTMLArcgisPrivacyPopupElement;
+        "arcgis-privacy-settings": HTMLArcgisPrivacySettingsElement;
     }
 }
 declare namespace LocalJSX {
-    interface ArcgisTrackingConfiguration {
+    interface ArcgisPrivacyNotice {
     }
-    interface ArcgisTrackingOption {
+    interface ArcgisPrivacyOption {
     }
-    interface ArcgisTrackingPopup {
-        "onOpenCookieDetails"?: (event: ArcgisTrackingPopupCustomEvent<any>) => void;
-        "onSetCookieConfig"?: (event: ArcgisTrackingPopupCustomEvent<CookieConfig>) => void;
+    interface ArcgisPrivacyPopup {
+        "onOpenCookieDetails"?: (event: ArcgisPrivacyPopupCustomEvent<any>) => void;
+        "onSetCookieConfig"?: (event: ArcgisPrivacyPopupCustomEvent<CookieConfig>) => void;
+        /**
+          * Visible state if open, or just showing cookie icon.
+         */
+        "open"?: boolean;
     }
-    interface ArcgisTrackingSidebar {
+    interface ArcgisPrivacySettings {
+        /**
+          * Existing preference settings
+         */
         "cookieConfig"?: CookieConfig;
-        "onSetCookieConfig"?: (event: ArcgisTrackingSidebarCustomEvent<CookieConfig>) => void;
+        "onSetCookieConfig"?: (event: ArcgisPrivacySettingsCustomEvent<CookieConfig>) => void;
+        /**
+          * Whether the Settings modal is open or closed
+         */
         "open"?: boolean;
     }
     interface IntrinsicElements {
-        "arcgis-tracking-configuration": ArcgisTrackingConfiguration;
-        "arcgis-tracking-option": ArcgisTrackingOption;
-        "arcgis-tracking-popup": ArcgisTrackingPopup;
-        "arcgis-tracking-sidebar": ArcgisTrackingSidebar;
+        "arcgis-privacy-notice": ArcgisPrivacyNotice;
+        "arcgis-privacy-option": ArcgisPrivacyOption;
+        "arcgis-privacy-popup": ArcgisPrivacyPopup;
+        "arcgis-privacy-settings": ArcgisPrivacySettings;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "arcgis-tracking-configuration": LocalJSX.ArcgisTrackingConfiguration & JSXBase.HTMLAttributes<HTMLArcgisTrackingConfigurationElement>;
-            "arcgis-tracking-option": LocalJSX.ArcgisTrackingOption & JSXBase.HTMLAttributes<HTMLArcgisTrackingOptionElement>;
-            "arcgis-tracking-popup": LocalJSX.ArcgisTrackingPopup & JSXBase.HTMLAttributes<HTMLArcgisTrackingPopupElement>;
-            "arcgis-tracking-sidebar": LocalJSX.ArcgisTrackingSidebar & JSXBase.HTMLAttributes<HTMLArcgisTrackingSidebarElement>;
+            "arcgis-privacy-notice": LocalJSX.ArcgisPrivacyNotice & JSXBase.HTMLAttributes<HTMLArcgisPrivacyNoticeElement>;
+            "arcgis-privacy-option": LocalJSX.ArcgisPrivacyOption & JSXBase.HTMLAttributes<HTMLArcgisPrivacyOptionElement>;
+            "arcgis-privacy-popup": LocalJSX.ArcgisPrivacyPopup & JSXBase.HTMLAttributes<HTMLArcgisPrivacyPopupElement>;
+            "arcgis-privacy-settings": LocalJSX.ArcgisPrivacySettings & JSXBase.HTMLAttributes<HTMLArcgisPrivacySettingsElement>;
         }
     }
 }

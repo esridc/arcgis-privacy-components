@@ -2,7 +2,7 @@ import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 
 export const config: Config = {
-  namespace: 'arcgis-tracking-configuration',
+  namespace: 'arcgis-privacy-components',
   sourceMap: true,
   plugins: [
     sass()
