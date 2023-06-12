@@ -1,0 +1,2 @@
+import{p as o,b as c}from"./p-e9cfc207.js";export{s as setNonce}from"./p-e9cfc207.js";const t=()=>{const s=import.meta.url;const c={};if(s!==""){c.resourcesUrl=new URL(".",s).href}return o(c)};t().then((s=>c([],s)));
+//# sourceMappingURL=arcgis-privacy-components.esm.js.map
