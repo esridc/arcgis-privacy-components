@@ -12,6 +12,7 @@
     const urlParams = new URL(window.location).searchParams;
     // Change for specific component properties
     componentEl.query = urlParams.get('query');
+    componentEl.view = "modal";
     componentEl.innerHTML = "By accepting all cookies or browsing this site, you agree to the storing of cookies on your device to assist Esri in analyzing visitor behavior, improving your experience, and delivering tailored advertising on and off our sites. Manage cookies here or at the bottom of any page."
     
     placeholderEl.appendChild(componentEl);
