@@ -13,6 +13,11 @@ export class ArcgisPrivacyPopup {
    */
   @Prop({ mutable: true, reflect: true }) open: boolean = true;
 
+  /**
+   * Whether the popup should popup or be inline
+   */
+  @Prop() view: "modal" | "popup" = "popup";
+
   render() {
     return this.open ? this.renderOpen() : this.renderClosed();
   }
@@ -29,14 +34,23 @@ export class ArcgisPrivacyPopup {
   }
 
   private renderOpen() {
-    return <div
-      class="popup open"
+    let output = <div
+      class={`${this.view} open`}
     >
       <p><slot>Simple explanation of cookie privacy...</slot></p>
       <calcite-button appearance="solid" width="full" onClick={() => this.acceptAllCookies()}>Accept All Cookies</calcite-button>
       <br />
       <calcite-button appearance="transparent" width="full" onClick={() => this.openCookieSettings()}>Cookie Settings</calcite-button>
     </div>;
+   if(this.view === "modal") {
+      output = <calcite-modal open>
+         <div slot="content">
+          {output}
+         </div>
+      </calcite-modal>
+    }
+   
+    return output;
   }
 
   private acceptAllCookies() {

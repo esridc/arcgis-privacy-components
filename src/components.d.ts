@@ -8,6 +8,10 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { CookieConfig } from "./utils/telemetry-config";
 export namespace Components {
     interface ArcgisPrivacyNotice {
+        /**
+          * Whether the notice is modal or footer
+         */
+        "view": "modal" | "popup";
     }
     interface ArcgisPrivacyOption {
     }
@@ -16,6 +20,10 @@ export namespace Components {
           * Visible state if open, or just showing cookie icon.
          */
         "open": boolean;
+        /**
+          * Whether the popup should popup or be inline
+         */
+        "view": "modal" | "popup";
     }
     interface ArcgisPrivacySettings {
         /**
@@ -74,6 +82,10 @@ declare global {
 }
 declare namespace LocalJSX {
     interface ArcgisPrivacyNotice {
+        /**
+          * Whether the notice is modal or footer
+         */
+        "view"?: "modal" | "popup";
     }
     interface ArcgisPrivacyOption {
     }
@@ -84,6 +96,10 @@ declare namespace LocalJSX {
           * Visible state if open, or just showing cookie icon.
          */
         "open"?: boolean;
+        /**
+          * Whether the popup should popup or be inline
+         */
+        "view"?: "modal" | "popup";
     }
     interface ArcgisPrivacySettings {
         /**

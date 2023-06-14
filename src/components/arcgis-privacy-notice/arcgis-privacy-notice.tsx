@@ -1,4 +1,4 @@
-import { Component, Host, Listen, State, h } from '@stencil/core';
+import { Component, Host, Listen, Prop, State, h } from '@stencil/core';
 import { CookieConfig, getCookieConfig, storeCookieConfig } from '../../utils/telemetry-config';
 
 @Component({
@@ -11,6 +11,12 @@ export class ArcgisPrivacyNotice {
   private privacyPopupEl;
   private privacySettingsEl;
 
+
+  /**
+   * Whether the notice is modal or footer
+   */
+  @Prop() view: "modal" | "popup" = "popup";
+
   @State() cookieConfig: CookieConfig = {};
   
   componentWillLoad() {
@@ -20,12 +26,13 @@ export class ArcgisPrivacyNotice {
     return (
       <Host>
 
-        <arcgis-privacy-popup
-          
-          ref={(el) => this.privacyPopupEl = el}   
-        >
-          <slot></slot>
-        </arcgis-privacy-popup>
+        
+      <arcgis-privacy-popup
+        view={this.view}
+        ref={(el) => this.privacyPopupEl = el}
+      >
+        <slot></slot>
+      </arcgis-privacy-popup>
         <arcgis-privacy-settings 
           ref={(el) => this.privacySettingsEl = el}
           cookieConfig={this.cookieConfig}
@@ -33,6 +40,7 @@ export class ArcgisPrivacyNotice {
       </Host>
     );
   }
+
 
   @Listen('openCookieDetails')
   openCookieDetails() {
