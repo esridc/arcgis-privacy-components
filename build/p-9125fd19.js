@@ -1,0 +1,2 @@
+const t="cookieSettings";var n;(function(t){t["necessary"]="necessary";t["targeting"]="targeting";t["performance"]="performance";t["functional"]="functional"})(n||(n={}));const e={[n.necessary]:null,[n.targeting]:true,[n.performance]:true,[n.functional]:true};function r(){return e}function o(n){localStorage.setItem(t,JSON.stringify(Object.assign({},n)))}function a(){const n=localStorage.getItem(t);if(!!n){return JSON.parse(n)}else{return r()}}export{n as C,r as a,a as g,o as s};
+//# sourceMappingURL=p-9125fd19.js.map
