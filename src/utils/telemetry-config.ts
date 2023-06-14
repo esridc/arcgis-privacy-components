@@ -11,7 +11,7 @@ export type CookieConfig = {
 };
 
 const defaultCookies: CookieConfig = {
-    [CookieOptions.necessary]: true,
+    [CookieOptions.necessary]: null,
     [CookieOptions.targeting]: true,
     [CookieOptions.performance]: true,
     [CookieOptions.functional]: true

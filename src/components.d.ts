@@ -26,6 +26,10 @@ export namespace Components {
           * Whether the Settings modal is open or closed
          */
         "open": boolean;
+        /**
+          * Explanation to show in window
+         */
+        "preferenceText": string;
     }
 }
 export interface ArcgisPrivacyPopupCustomEvent<T> extends CustomEvent<T> {
@@ -91,6 +95,10 @@ declare namespace LocalJSX {
           * Whether the Settings modal is open or closed
          */
         "open"?: boolean;
+        /**
+          * Explanation to show in window
+         */
+        "preferenceText"?: string;
     }
     interface IntrinsicElements {
         "arcgis-privacy-notice": ArcgisPrivacyNotice;
